@@ -46,9 +46,3 @@ library(DAAG)
 data(grog)
 
 country.year(grog, id=grog$Country, year=grog$Year, "test", dup.omit=TRUE)
-
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{data}
-\keyword{manip}
-\keyword{chron}
