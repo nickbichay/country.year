@@ -36,7 +36,7 @@ year: the year variable from the dataset
 
 file: a character of the filename for the table to saved to
 
-dup.omit: whether or not you'd lik duplicate years of the same id to be removed. Defaults to false.
+dup.omit: whether or not you would like duplicate years of the same id to be removed. Defaults to false.
 
 
 
