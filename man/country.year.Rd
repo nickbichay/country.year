@@ -46,3 +46,4 @@ library(DAAG)
 data(grog)
 
 country.year(grog, id=grog$Country, year=grog$Year, "test", dup.omit=TRUE)
+}
