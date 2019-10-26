@@ -5,7 +5,7 @@ Country.year easily creates a table of country-year observations in a stem-and-l
 
 
 
-##Example
+## Example
 
 
 |Country | Years
@@ -16,13 +16,13 @@ Country.year easily creates a table of country-year observations in a stem-and-l
 
 
 
-##Installation
+## Installation
 
 devtools::install_github("nickbichay/country.year")
 
 
 
-##Usage
+## Usage
 
 country.year(data, id, year, file, dup.omit=FALSE)
 
@@ -40,7 +40,7 @@ dup.omit: whether or not you'd lik duplicate years of the same id to be removed.
 
 
 
-##Example
+## Example
 
 load("data")
 country.year(data, data$country, data$year, "observations", dup.omit=TRUE)
