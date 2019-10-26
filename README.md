@@ -26,7 +26,7 @@ devtools::install_github("nickbichay/country.year")
 
 country.year(data, id, year, file, dup.omit=FALSE)
 
-Arguments:
+#### Arguments:
 
 data: the name of your dataset
 
@@ -42,5 +42,5 @@ dup.omit: whether or not you'd lik duplicate years of the same id to be removed.
 
 ## Example
 
-load("data")
+load("data") <br/>
 country.year(data, data$country, data$year, "observations", dup.omit=TRUE)
