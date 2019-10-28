@@ -46,7 +46,7 @@ dup.omit: whether or not you would like duplicate years of the same id to be rem
 ## Example
 
 ```R
-load("data") <br/>
+load("data")
 country.year(data, data$country, data$year, "observations", dup.omit=TRUE)
 ```
 
