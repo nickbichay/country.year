@@ -37,7 +37,7 @@ id: the id (country variable) from the dataset
 
 year: the year variable from the dataset
 
-file: a character of the filename for the table to saved to
+file: a character of the filename for the table to be saved to
 
 dup.omit: whether or not you would like duplicate years of the same id to be removed. Defaults to false.
 
@@ -49,4 +49,4 @@ dup.omit: whether or not you would like duplicate years of the same id to be rem
 load("data")
 country.year(data, data$country, data$year, "observations", dup.omit=TRUE)
 ```
-
+Will output a table called observations.csv to the current working directory.
