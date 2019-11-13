@@ -8,3 +8,4 @@ Description: country.year automatically creates a dataframe of all country-year 
 License: GNU GPL3
 Encoding: UTF-8
 LazyData: true
+Imports: R.utils
