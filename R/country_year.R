@@ -5,7 +5,7 @@ if(dup.omit==FALSE & ranges==TRUE){
     message("Error: dup.omit is FALSE while ranges is TRUE")
 } else {
 
-    require(R.utils)
+    quietly(require(R.utils))
 
     countries <- unique(id)
 
@@ -19,7 +19,7 @@ for(i in countries){
     years <- unlist(year)[id==i]
     years <- sort(years)
 
-    mat$Years[mat$Country==i] <- paste(years, collapse=" ")   
+    mat$Years[mat$Country==i] <- paste(years, collapse=" ")
 
     }
 
@@ -31,10 +31,10 @@ for(i in countries){
     years <- unique(sort(years))
 
     if(ranges==FALSE){
-    mat$Years[mat$Country==i] <- paste(years, collapse=" ")   
+    mat$Years[mat$Country==i] <- paste(years, collapse=" ")
 
     } else if(ranges==TRUE){
-    mat$Years[mat$Country==i] <- seqToHumanReadable(years, tau=1) 
+    mat$Years[mat$Country==i] <- seqToHumanReadable(years, tau=1)
 
     } else { }
 
