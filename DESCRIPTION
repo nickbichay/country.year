@@ -1,10 +1,10 @@
 Package: country.year
 Type: Package
 Title: Create Country-Year Table of Observations
-Version: 0.1.0
+Version: 0.2.0
 Author: Nicolas Bichay
 Maintainer: The package maintainer <bichayni@msu.edu>
-Description: country.year automatically creates a table (csv) of all country-year observations (stem-and-leaf style) in a dataset.
+Description: country.year automatically creates a dataframe of all country-year observations (stem-and-leaf style) in a dataset.
 License: GNU GPL3
 Encoding: UTF-8
 LazyData: true

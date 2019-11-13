@@ -1,5 +1,11 @@
 
-country.year <- function(data, id, year, filename, dup.omit = FALSE) {
+country.year <- function(data, id, year, dup.omit = TRUE, ranges=TRUE) {
+
+if(dup.omit==FALSE & ranges==TRUE){
+    message("Error: dup.omit is FALSE while ranges is TRUE")
+} else {
+
+    require(R.utils)
 
     countries <- unique(id)
 
@@ -16,26 +22,31 @@ for(i in countries){
     mat$Years[mat$Country==i] <- paste(years, collapse=" ")   
 
     }
-}
 
 
-else if(dup.omit==TRUE) {
+} else if(dup.omit==TRUE) {
 for(i in countries){
 
     years <- unlist(year)[id==i]
     years <- unique(sort(years))
 
+    if(ranges==FALSE){
     mat$Years[mat$Country==i] <- paste(years, collapse=" ")   
 
+    } else if(ranges==TRUE){
+    mat$Years[mat$Country==i] <- seqToHumanReadable(years, tau=1) 
+
+    } else { }
+
+
     }
+
+
+} else { }
+
+
+output  <- mat[order(mat$Country),]
+
 }
-
-else{ }
-
-
-output  <-  paste0(filename,".csv")
-write.table(mat[order(mat$Country),], file = output, row.names = FALSE, sep=",")
-
-message(paste(output, " written to ", "\"",getwd(), "\"", sep=""))
 
 }

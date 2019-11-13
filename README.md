@@ -1,7 +1,7 @@
 # country.year
 
 
-Country.year easily creates a table of country-year observations in a stem-and-leaf type visualization. 
+Country.year easily creates a dataframe of country-year observations in a stem-and-leaf type visualization. 
 
 
 
@@ -26,7 +26,7 @@ devtools::install_github("nickbichay/country.year")
 ## Usage
 
 ```R
-country.year(data, id, year, file, dup.omit=FALSE)
+countryyears <- country.year(data, id, year, dup.omit=TRUE, ranges=FALSE)
 ```
 
 #### Arguments:
@@ -37,9 +37,9 @@ id: the id (country variable) from the dataset
 
 year: the year variable from the dataset
 
-file: a character of the filename for the table to be saved to
+dup.omit: whether or not you would like duplicate years of the same id to be removed. Defaults to true. Must be true to use ranges option.
 
-dup.omit: whether or not you would like duplicate years of the same id to be removed. Defaults to false.
+ranges: Whether or not you want subsequent years to be grouped into a range, seperated by a hypthen. Defaults to False. Cannont be true if dup.omit is false.
 
 
 
@@ -47,6 +47,6 @@ dup.omit: whether or not you would like duplicate years of the same id to be rem
 
 ```R
 load("data")
-country.year(data, data$country, data$year, "observations", dup.omit=TRUE)
+countryyears <- country.year(data, data$country, data$year, dup.omit=TRUE, ranges=TRUE)
 ```
-Will output a table called observations.csv to the current working directory.
+
