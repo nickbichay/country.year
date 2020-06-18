@@ -8,7 +8,7 @@ if(dup.omit==FALSE & ranges==TRUE){
     message("Error: dup.omit is FALSE while ranges is TRUE")
 } else {
 
-    suppressMessages(suppressWarnings(require(R.utils)))
+    quietly(require(R.utils))
 
     countries <- unique(get(id))
 
@@ -49,10 +49,6 @@ for(i in countries){
 
 
 output  <- mat[order(mat$Country),]
-output <- output[-1]
-colnames(output) <- NULL
-
-return(output)
 
 }
 
