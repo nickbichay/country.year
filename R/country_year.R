@@ -1,5 +1,8 @@
 
-country.year <- function(data, id, year, dup.omit = TRUE, ranges=TRUE) {
+country.year <- function(data, id, year, dup.omit = TRUE, ranges=FALSE) {
+
+    id <- paste(get(data), get(id), sep="$")
+    year <- paste(get(data), get(year), sep="$")
 
 if(dup.omit==FALSE & ranges==TRUE){
     message("Error: dup.omit is FALSE while ranges is TRUE")
@@ -7,7 +10,7 @@ if(dup.omit==FALSE & ranges==TRUE){
 
     suppressMessages(suppressWarnings(require(R.utils)))
 
-    countries <- unique(id)
+    countries <- unique(get(id))
 
     mat <- data.frame(row.names=countries)
     mat$Country <- rownames(mat)

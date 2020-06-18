@@ -1,6 +1,6 @@
 \name{country.year}
 \alias{country.year}
-\title{Function to create country-year dataframe.}
+\title{Package to create country-year dataframe.}
 \usage{
 country.year(x, id, year, dup.omit=TRUE, ranges=FALSE)
 }
@@ -17,8 +17,8 @@ country.year returns a dataframe of all country-year observations (stem-and-leaf
 }
 \author{Nicolas Bichay}
 \examples{
-library(DAAG)
-data(grog)
+#library(DAAG)
+#data(grog)
 
-country.year(grog, id=grog$Country, year=grog$Year, dup.omit=TRUE ranges=FALSE)
+#country.year(grog, id= "Country", year= "Year", dup.omit=TRUE, ranges=FALSE)
 }
