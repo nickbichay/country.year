@@ -47,5 +47,5 @@ ranges: Whether or not you want subsequent years to be grouped into a range, sep
 
 ```R
 load("data")
-countryyears <- country.year(data, data$country, data$year, dup.omit=TRUE, ranges=TRUE)
+countryyears <- country.year(data, "country", "year", dup.omit=TRUE, ranges=TRUE)
 ```
