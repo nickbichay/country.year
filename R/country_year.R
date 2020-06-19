@@ -1,16 +1,16 @@
 
 country.year <- function(data, id, year, dup.omit = TRUE, ranges=FALSE) {
 
-    id <- paste(get(data), get(id), sep="$")
-    year <- paste(get(data), get(year), sep="$")
+    id <- eval(parse(text=paste(deparse(substitute(data)), id, sep="$")))
+    year <- eval(parse(text=paste(deparse(substitute(data)), year, sep="$")))
 
 if(dup.omit==FALSE & ranges==TRUE){
     message("Error: dup.omit is FALSE while ranges is TRUE")
 } else {
 
-    quietly(require(R.utils))
+    suppressMessages(suppressWarnings(require(R.utils)))
 
-    countries <- unique(get(id))
+    countries <- unique(id)
 
     mat <- data.frame(row.names=countries)
     mat$Country <- rownames(mat)
@@ -49,6 +49,10 @@ for(i in countries){
 
 
 output  <- mat[order(mat$Country),]
+output <- output[-1]
+colnames(output) <- NULL
+
+return(output)
 
 }
 
